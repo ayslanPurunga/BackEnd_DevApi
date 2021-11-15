@@ -4,19 +4,25 @@ services:
   node:
     build:
       context: .
-    container_name: "dev_api"
+    container_name: "dev"
     ports:
       - "3000:3000"
-    volumes: 
-      - ./src:/app  
+    volumes:
+      - ./src:/app
     depends_on:
-      - db
-  db:
-    image: mongo
-    container_name: db
+      - mongo
+    networks:
+      - mongo  
+  mongo:
+    image: mongo:3.6
     restart: always
     ports:
       - 27017:27017
-    # environment:
+    networks:
+      - mongo  
+    #environment:
     # MONGO_INITDB_ROOT_USERNAME: root
-    # MONGO_INITDB_ROOT_PASSWORD: root    
+    # MONGO_INITDB_ROOT_PASSWORD: root
+networks:
+  mongo:
+    driver: bridge
