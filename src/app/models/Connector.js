@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+import mongoose, { Schema } from 'mongoose';
 
 const ConnectorSchema = new Schema({
     name:{
@@ -31,13 +30,13 @@ const ConnectorSchema = new Schema({
         required:true
     },
     status:{
-        type: String,
-        required:true
+        type: Boolean,
+        required:true,
+        default:true
     },
-        token: String,
-        expiration: String        
-},{
-    timestamps:true,
+    deleted_at:{
+        type: Date,
+    },
 });
 
-export default model('Connector', ConnectorSchema);
+export default mongoose.model('Connector', ConnectorSchema);

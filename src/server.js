@@ -1,5 +1,3 @@
-const app = require('./app');
-
-console.log("Ola mundo!")
+import app from './app';
 
 app.listen(3000);

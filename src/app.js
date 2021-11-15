@@ -1,16 +1,19 @@
-const express = require('express')
-const cors = require('cors')
+//import express from 'express';
+const express = require('express');
+const cors = require('cors');
+import '../database';
 
-class AppController {
+
+class App {
     constructor() {
         this.express = express()
         
-        /*this.cors()
+        this.cors()
         this.middlewares()
-        this.routes()*/
+        this.routes()
     }
 
-    /*middlewares() {
+    middlewares() {
         this.express.use(express.json())
     }
 
@@ -20,7 +23,7 @@ class AppController {
 
     cors() {
         this.express.use(cors())
-    }*/
+    }
 }
 
-module.exports = new AppController().express
+export default new App().express;
