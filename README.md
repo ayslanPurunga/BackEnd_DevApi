@@ -4,8 +4,13 @@
 
 ## Banco de Dados MongoDB
 
-- ODM -Mongoose
+- ODM - Mongoose
 
+## Popular o banco de dados:
+
+```
+npm run seed
+```
 ## Para iniciar a aplicação:
 
 #### Baixar as imagens e construir os containers:
